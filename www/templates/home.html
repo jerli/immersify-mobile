@@ -1,0 +1,15 @@
+<ion-view title="IonicVision" ng-controller="HomeController as home_ctrl">
+  <ion-content class="padding">
+    <h3 class="text-center" ng-show="imageDescription" ng-click="speech()">{{ imageDescription }}</h3>
+    <img src="{{ currentImage }}" class="picture">
+  </ion-content>
+    <label class="select item item-input item-select">
+      <div class="input-label"><i class="fa fa-globe" aria-hidden="true"></i></div>
+    <select ng-model="currLanguage" ng-change="updateLanguages(currLanguage, oldValue)" ng-focus="oldValue = currLanguage">
+      <option value="{{language_code}}" ng-repeat="(language, language_code) in languages">{{language}}</option>
+    </select>
+    </label>
+    <button class="bottom button button-outline button-dark button-fab-center" ng-click="takePicture()">
+      <i class="fa fa-camera" aria-hidden="true"></i>
+    </button>
+</ion-view>
